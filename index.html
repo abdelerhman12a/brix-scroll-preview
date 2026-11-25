@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BRIX — scroll-driven 3D preview</title>
+<meta name="description" content="A scroll-driven 3D product page preview built with three.js, GSAP ScrollTrigger and Lenis." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css" />
+<link rel="stylesheet" href="./style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="loader">
+  <span class="loader__mark">BRIX</span>
+  <span class="loader__note">filling the bottle…</span>
+</div>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<div id="fallback" hidden>
+  <h1>BRIX</h1>
+  <p>This preview needs WebGL, which this browser has turned off. The page text still works; the 3D bottle does not.</p>
+</div>
+
+<main>
+
+  <section class="section section--hero">
+    <div class="section__inner">
+      <p class="eyebrow">Still water · bottled at one spring</p>
+      <h1 class="display">BRIX</h1>
+      <p class="lede">One spring, one bench, one temperature. Nothing added, nothing taken out.</p>
+      <p class="hint">Scroll to descend</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <h2 class="display display--sm">SURFACE</h2>
+      <p class="lede">Every bottle leaves the bench at 6°C and stays there for the first twenty-four hours. That is the whole trick.</p>
+    </div>
+  </section>
+
+  <section class="section section--right">
+    <div class="section__inner">
+      <h2 class="display display--sm">TAKE A<br />CLOSER LOOK</h2>
+      <ul class="specs">
+        <li><span>01</span><div><strong>Single source</strong><p>Drawn from one borehole, never blended with a second supply.</p></div></li>
+        <li><span>02</span><div><strong>Cold chain</strong><p>Filled, capped and chilled inside the same hour.</p></div></li>
+        <li><span>03</span><div><strong>Thin glass</strong><p>0.9 mm wall so the water shows through, not the bottle.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__inner">
+      <h2 class="display display--sm">ASK US<br />ABOUT YOUR WATER</h2>
+      <p class="lede">Send us the report from your own tap and we will set the bench temperature for you.</p>
+      <a class="cta" href="#bench">Start with your report</a>
+    </div>
+  </section>
+
+  <section class="section section--grid" id="bench">
+    <div class="section__inner">
+      <h2 class="display display--sm">THE SLOW<br />ONES BENCH</h2>
+      <div class="cards">
+        <article class="card"><h3>Still</h3><p>750 ml · 6°C · the reference bottle</p></article>
+        <article class="card"><h3>Still, wider</h3><p>1 L · 6°C · for the table</p></article>
+        <article class="card"><h3>Bench reserve</h3><p>500 ml · 4°C · small run, numbered</p></article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Fictional brand built as a layout study. Not affiliated with, endorsed by, or copied from any real water company.</p>
+    <p>three.js · GSAP ScrollTrigger · Lenis — all free and open tooling.</p>
+  </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>
